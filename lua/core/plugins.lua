@@ -78,5 +78,15 @@ require("lazy").setup({
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' }
   },
-  {'akinsho/toggleterm.nvim', version = "*", config = true}
+  {'akinsho/toggleterm.nvim', version = "*", config = true},
+  {
+    "chikko80/error-lens.nvim",
+    event = "BufRead",
+    dependencies = {
+        "nvim-telescope/telescope.nvim"
+    },
+    opts = {
+        -- your options go here
+    },
+  }
 })
