@@ -7,8 +7,8 @@ vim.lsp.config("*", {
 
 for _, name in ipairs({  
   "clangd",  
-  -- "cmake_language_server",  
-  -- "gopls",  
+  "cmake_language_server",  
+  "gopls",  
   -- "ts_ls",  
   -- "rust_analyzer",
 }) do  

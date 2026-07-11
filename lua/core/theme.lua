@@ -1,3 +1,6 @@
+vim.o.background = "dark"
+vim.o.termguicolors = true
+
 require("catppuccin").setup({
   flavour = "mocha",
   transparent_background = false,

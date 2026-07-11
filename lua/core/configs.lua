@@ -36,3 +36,8 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.smartindent = true
 
+vim.lsp.inlay_hint.enable(true)
+
+vim.opt.termguicolors = true
+vim.cmd("syntax on")
+vim.o.background = "dark"
