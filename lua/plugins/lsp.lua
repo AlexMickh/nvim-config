@@ -1,4 +1,5 @@
 require("lsp.clangd")
+require("lsp.rustanalyzer")
 require("plugins.cmp")
 
 vim.lsp.config("*", {  
@@ -9,8 +10,8 @@ for _, name in ipairs({
   "clangd",  
   "cmake_language_server",  
   "gopls",  
+  "rust_analyzer",
   -- "ts_ls",  
-  -- "rust_analyzer",
 }) do  
   vim.lsp.enable(name)
 end
