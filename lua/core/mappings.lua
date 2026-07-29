@@ -1,7 +1,11 @@
 vim.g.mapleader = " "
 
 -- neotree
-vim.keymap.set('n', '<leader>e', ':Neotree position=float reveal<CR>')
+-- vim.keymap.set('n', '<leader>e', ':Neotree position=float reveal<CR>')
+
+-- oil
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+vim.keymap.set("n", "_", "<CMD>Oil --float<CR>", { desc = "Open parent directory float" })
 
 -- lsp
 vim.api.nvim_create_autocmd("LspAttach", {
