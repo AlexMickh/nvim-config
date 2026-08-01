@@ -13,4 +13,4 @@ require('plugins.bufferline')
 require('plugins.lualine')
 require('plugins.toggleterm')
 require('plugins.treesittercontext')
-
+require('plugins.luasnip')
