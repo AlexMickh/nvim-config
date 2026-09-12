@@ -161,5 +161,22 @@ require("lazy").setup({
       -- Your DBUI configuration
       vim.g.db_ui_use_nerd_fonts = 1
     end,
-}
+  },
+  {
+    "kdheepak/lazygit.nvim",
+    lazy = true,
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    -- keys = {
+    --   { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+    -- }
+  }
 })

@@ -73,3 +73,6 @@ end)
 -- dbui
 vim.keymap.set("n", "<leader>du", "<Cmd>DBUI<CR>")
 
+-- lazygit
+vim.keymap.set("n", "<leader>lg", "<Cmd>LazyGit<CR>")
+
