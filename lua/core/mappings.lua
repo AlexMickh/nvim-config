@@ -52,11 +52,24 @@ vim.keymap.set("n", "[c", function()
   require("treesitter-context").go_to_context(vim.v.count1)
 end, { silent = true })
 
--- windows
-vim.keymap.set('n', '<leader>sv', '<Cmd>vnew<CR>')
-vim.keymap.set('n', '<leader>sh', '<Cmd>new<CR>')
--- vim.keymap.set('n', '<C-j>', '<Cmd>wincmd j<CR>')
--- vim.keymap.set('n', '<C-k>', '<Cmd>wincmd k<CR>')
--- vim.keymap.set('n', '<C-l>', '<Cmd>wincmd l<CR>')
--- vim.keymap.set('n', '<C-h>', '<Cmd>wincmd h<CR>')
+-- formating
+vim.keymap.set("n", "<leader>F", function()
+  local buf = vim.api.nvim_get_current_buf()
+  local name = vim.api.nvim_buf_get_name(buf)
+
+  local ext = name:match("^.+(%..+)$")
+  local is_cpp = ext == ".cpp" or ext == ".cc" or ext == ".cxx" or ext == ".h" or ext == ".hpp" or ext == ".hh" or ext == ".hxx"
+
+  local ft = vim.bo[buf].filetype
+  local is_cpp_ft = ft == "cpp" or ft == "cxx" or ft == "cc"
+
+  if not (is_cpp or is_cpp_ft) then
+    return
+  end
+
+  vim.cmd("%!clang-format -style=file")
+end)
+
+-- dbui
+vim.keymap.set("n", "<leader>du", "<Cmd>DBUI<CR>")
 

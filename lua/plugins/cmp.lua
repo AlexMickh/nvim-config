@@ -56,7 +56,14 @@ local luasnip = require("luasnip")
       -- { name = 'snippy' }, -- For snippy users.
     }, {
       { name = 'buffer' },
-    })
+    }),
+  })
+
+  cmp.setup.filetype('sql', {
+    sources = {
+        { name = "vim-dadbod-completion" },
+        { name = "buffer" },
+    }
   })
 
   -- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
