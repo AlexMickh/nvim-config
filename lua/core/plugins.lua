@@ -175,8 +175,13 @@ require("lazy").setup({
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
-    -- keys = {
-    --   { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
-    -- }
+  },
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-neotest/nvim-nio",
+      "antoinemadec/FixCursorHold.nvim",
+      "fredrikaverpil/neotest-golang",
+    }
   }
 })
