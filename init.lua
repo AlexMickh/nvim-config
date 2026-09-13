@@ -16,3 +16,5 @@ require('plugins.treesittercontext')
 require('plugins.luasnip')
 require('plugins.rendermarkdown')
 require('plugins.neotest')
+require('plugins.dap')
+

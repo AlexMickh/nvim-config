@@ -14,6 +14,8 @@ vim.wo.linebreak = true
 vim.opt.virtualedit = "block"
 vim.opt.undofile = true
 vim.opt.shell = "/bin/zsh"
+vim.o.exrc = true      
+-- vim.o.secure = true
 
 -- mouse
 vim.opt.mouse = "a"
@@ -41,3 +43,12 @@ vim.lsp.inlay_hint.enable(true)
 vim.opt.termguicolors = true
 vim.cmd("syntax on")
 vim.o.background = "dark"
+
+-- error lens
+vim.diagnostic.config({
+  virtual_text = {
+    spacing = 4,
+    source = "if_many",
+    prefix = "●",  
+  },
+})

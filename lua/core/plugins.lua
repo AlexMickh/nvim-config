@@ -81,16 +81,16 @@ require("lazy").setup({
     dependencies = { 'nvim-tree/nvim-web-devicons' }
   },
   {'akinsho/toggleterm.nvim', version = "*", config = true},
-  {
-    "chikko80/error-lens.nvim",
-    event = "BufRead",
-    dependencies = {
-        "nvim-telescope/telescope.nvim"
-    },
-    opts = {
-        -- your options go here
-    },
-  },
+  -- {
+  --   "chikko80/error-lens.nvim",
+  --   event = "BufRead",
+  --   dependencies = {
+  --       "nvim-telescope/telescope.nvim"
+  --   },
+  --   opts = {
+  --       -- your options go here
+  --   },
+  -- },
   { 'nvim-treesitter/nvim-treesitter-context' },
   {
     "christoomey/vim-tmux-navigator",
@@ -183,5 +183,22 @@ require("lazy").setup({
       "antoinemadec/FixCursorHold.nvim",
       "fredrikaverpil/neotest-golang",
     }
-  }
+  },
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      "rcarriga/nvim-dap-ui",
+      "nvim-neotest/nvim-nio",
+      "theHamsta/nvim-dap-virtual-text",
+      "williamboman/mason.nvim",
+      "jay-babu/mason-nvim-dap.nvim",
+      "leoluz/nvim-dap-go",
+      { 
+        "ravsii/nvim-dap-envfile", 
+        opts = {
+          files = { ".env" } 
+        }
+      } 
+    },
+  },
 })

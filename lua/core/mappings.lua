@@ -71,7 +71,7 @@ vim.keymap.set("n", "<leader>F", function()
 end)
 
 -- dbui
-vim.keymap.set("n", "<leader>du", "<Cmd>DBUI<CR>")
+vim.keymap.set("n", "<leader>bu", "<Cmd>DBUI<CR>")
 
 -- lazygit
 vim.keymap.set("n", "<leader>lg", "<Cmd>LazyGit<CR>")
@@ -80,5 +80,15 @@ vim.keymap.set("n", "<leader>lg", "<Cmd>LazyGit<CR>")
 local neotest = require("neotest")
 vim.keymap.set("n", "<leader>tr", function() neotest.run.run() end)
 vim.keymap.set("n", "<leader>tf", function() neotest.run.run(vim.fn.expand("%")) end)
-vim.keymap.set("n", "<leader>ts", function() neotest.summary.toggle() end)
+vim.keymap.set("n", "<leader>ts", function() neotest.run.run(vim.fn.expand("%")) end)
 
+-- dap
+local dap = require("dap")
+vim.keymap.set("n", "<leader>dc", dap.continue)
+vim.keymap.set("n", "<leader>dv", dap.step_over)
+vim.keymap.set("n", "<leader>di", dap.step_into)
+vim.keymap.set("n", "<leader>do", dap.step_out)
+vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint)
+vim.keymap.set("n", "<Leader>dt", function()
+  require("dap-go").debug_test()
+end)
