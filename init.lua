@@ -3,7 +3,6 @@ require('core.mappings')
 require('core.configs')
 require('core.theme')
 
--- require('plugins.neotree')
 require('plugins.oil')
 require('plugins.treesitter')
 require('plugins.lsp')
@@ -17,4 +16,5 @@ require('plugins.luasnip')
 require('plugins.rendermarkdown')
 require('plugins.neotest')
 require('plugins.dap')
+require('plugins.imagepreview')
 
