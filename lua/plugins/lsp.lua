@@ -2,6 +2,7 @@ require("lsp.clangd")
 require("lsp.rustanalyzer")
 require("lsp.luals")
 require("lsp.tsls")
+require("lsp.prisma")
 require("plugins.cmp")
 
 vim.lsp.config("*", {  
@@ -14,7 +15,8 @@ for _, name in ipairs({
   "gopls",  
   "rust_analyzer",
   "lua_ls",
-  "ts_ls"
+  "ts_ls",
+  "prisma-language-server"
 }) do
   vim.lsp.enable(name)
 end

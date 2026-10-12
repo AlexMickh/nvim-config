@@ -8,13 +8,13 @@ require('nvim-treesitter').setup {
   indent = {
     enable = true,
   },
-  ensure_installed = { "c", "cpp", "go", "lua", "rust", "typescript", "javascript", "html", "tsx" },
+  ensure_installed = { "c", "cpp", "go", "lua", "rust", "typescript", "javascript", "html", "tsx", "prisma" },
 }
 vim.cmd('syntax on')
 vim.treesitter.language.register('go', 'go')
 vim.treesitter.language.register('cpp', 'cpp')
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'lua', 'c', 'cpp', 'go', 'rust', "typescript", "javascript", "html", "tsx" }, -- Add your languages here
+  pattern = { 'lua', 'c', 'cpp', 'go', 'rust', "typescript", "javascript", "html", "tsx", "prisma" }, -- Add your languages here
   callback = function()
     vim.treesitter.start()
   end,
