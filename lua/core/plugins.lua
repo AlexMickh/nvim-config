@@ -56,7 +56,10 @@ require("lazy").setup({
   },
   { 
     'nvimtools/none-ls.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' }
+    dependencies = {
+        'nvim-lua/plenary.nvim',
+        "nvimtools/none-ls-extras.nvim"
+    }
   },
   {
     'windwp/nvim-autopairs',
@@ -191,4 +194,9 @@ require("lazy").setup({
       } 
     },
   },
+  { 'projekt0n/github-nvim-theme', name = 'github-theme' },
+  {
+      "windwp/nvim-ts-autotag",
+      dependencies = { "nvim-treesitter/nvim-treesitter" }
+  }
 })

@@ -7,9 +7,12 @@ null_ls.setup({
     null_ls.builtins.formatting.gofumpt,
     null_ls.builtins.formatting.goimports_reviser,
     null_ls.builtins.formatting.golines,
+    -- require("none-ls.diagnostics.eslint_d"),
+    require("none-ls.code_actions.eslint_d"),
+    require("none-ls.formatting.eslint_d"),
   },
   on_attach = function(client, bufnr)
-    if client.supports_method("textDocument/formatting") and vim.fn.expand("%:e") == "go" then
+    if client.supports_method("textDocument/formatting") then
       vim.api.nvim_clear_autocmds({
         group = augroup,
         buffer = bufnr,

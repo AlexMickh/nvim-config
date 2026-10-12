@@ -17,4 +17,5 @@ require('plugins.rendermarkdown')
 require('plugins.neotest')
 require('plugins.dap')
 require('plugins.imagepreview')
+require('plugins.autotag')
 
