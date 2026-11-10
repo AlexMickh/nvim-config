@@ -12,7 +12,9 @@ null_ls.setup({
     require("none-ls.formatting.eslint_d"),
   },
   on_attach = function(client, bufnr)
-    if client.supports_method("textDocument/formatting") then
+    local ft = vim.bo[bufnr].filetype
+-- if ft ~= "c" or ft ~= "cpp" or ft then
+    if client.supports_method("textDocument/formatting") and (ft ~= "cpp" and ft ~= "c" and ft ~= "hpp" and ft ~= "h") then
       vim.api.nvim_clear_autocmds({
         group = augroup,
         buffer = bufnr,
@@ -21,13 +23,15 @@ null_ls.setup({
         group = augroup,
         buffer = bufnr,
         callback = function()
-          vim.lsp.buf.format({ bufnr = bufnr })
+          -- if ft ~= "c" or ft ~= "cpp" or ft then
+            vim.lsp.buf.format({ bufnr = bufnr })
+          -- end
         end
       })
     end
   end
 })
 
-null_ls.builtins.formatting.clang_format.with({
-  extra_args = { "--style", "{BasedOnStyle: Microsoft, IndentWidth: 4}" }
-})
+-- null_ls.builtins.formatting.clang_format.with({
+--   extra_args = { "--style", "{BasedOnStyle: Microsoft, IndentWidth: 4}" }
+-- })

@@ -14,7 +14,7 @@ vim.wo.linebreak = true
 vim.opt.virtualedit = "block"
 vim.opt.undofile = true
 vim.opt.shell = "/bin/zsh"
-vim.o.exrc = true      
+vim.o.exrc = true
 -- vim.o.secure = true
 
 -- mouse

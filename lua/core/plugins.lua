@@ -198,5 +198,22 @@ require("lazy").setup({
   {
       "windwp/nvim-ts-autotag",
       dependencies = { "nvim-treesitter/nvim-treesitter" }
-  }
+  },
+  { 'mluders/comfy-line-numbers.nvim' },
+  {
+  "folke/which-key.nvim",
+  event = "VeryLazy",
+  opts = {
+      delay = 1000,
+  },
+  keys = {
+    {
+      "<leader>?",
+      function()
+        require("which-key").show({ global = false })
+      end,
+      desc = "Buffer Local Keymaps (which-key)",
+    },
+  },
+},
 })

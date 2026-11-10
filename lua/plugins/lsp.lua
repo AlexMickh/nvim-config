@@ -16,7 +16,7 @@ for _, name in ipairs({
   "rust_analyzer",
   "lua_ls",
   "ts_ls",
-  "prisma-language-server"
+  -- "prisma-language-server"
 }) do
   vim.lsp.enable(name)
 end
